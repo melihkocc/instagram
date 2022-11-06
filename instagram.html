@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>İnstagram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+      .storytext{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 12px;
+        color: black;
+      }
+      .posttext{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: black;
+      }
+    </style>
+  </head>
+  
+  
+  <body>
+    
+    <nav class="navbar navbar-expand-sm navbar-light border" style="height: 54px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <a class="navbar-brand" href="#"><img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"></a>
+                </div>
+                <div class="col-sm">
+                  <nav class="navbar">
+                    <div class="container-fluid">
+                      <form class="d-flex" role="search">
+                        <input class="form-control me-2 mt-2" type="search" placeholder="Search" aria-label="Search">
+                      </form>
+                    </div>
+                  </nav>
+                </div>              
+                <div class="col-sm">
+                  <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mt-2 mx-5">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWBOlrZSSTJv8zg18ylv79Kzy73sQpXFigfg&usqp=CAU" width="30"></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="data:image/png;base64,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" width="30"></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="https://w7.pngwing.com/pngs/72/625/png-transparent-computer-icons-compass-symbol-compass-angle-triangle-technic.png" width="30"></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="https://w7.pngwing.com/pngs/52/757/png-transparent-heart-instagram-love-purple-computer-wallpaper.png" width="30"></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+            </div>
+        </div>            
+    </nav>
+
+
+            <!--Hikayeler başladı-->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 mt-2">
+            <div class="card" style="height: 90px;">
+              <div class="card-body">
+                <a href="https://www.instagram.com/kodluyoruz" class="mx-2" target="_blank" style="text-decoration: none;">
+                <img src="kodluyoruz.png"
+                class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                <span class="storytext">kodluyoruz</span>
+                </a> 
+
+                <a href="https://www.instagram.com/furkantolgayuce" class="mx-2" target="_blank" style="text-decoration: none;">
+                  <img src="fty.jpeg"
+                  class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                  <span class="storytext">furkantolga</span>
+                  </a> 
+                <a href="https://www.instagram.com/elonrmuskk" class="mx-2" target="_blank" style="text-decoration: none;">
+                  <img src="elon.jpg"
+                  class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                  <span class="storytext">elonrmuskk</span>
+                  </a>   
+
+                <a href="https://www.instagram.com/hakanyalcinkaya" class="mx-2" target="_blank" style="text-decoration: none;">
+                  <img src="hakan.jpeg"
+                  class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                  <span class="storytext">hakanyalcin</span>
+                  </a><br>
+                <a  href="https://www.instagram.com/ozgeacik" class="mx-3" target="_blank" style="text-decoration: none;">
+                  <img src="ozge.jpeg"
+                  class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                  <span class="storytext">ozgeacik</span>
+                  </a> 
+                <a href="https://www.instagram.com/kablosuzkedi" class="mx-3" target="_blank" style="text-decoration: none;">
+                  <img src="kablosuzked.png"
+                  class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                  <span class="storytext">kablosuzkedi</span>
+                  </a> 
+                <a href="https://www.instagram.com/gulcanyayla" class="mx-3" target="_blank" style="text-decoration: none;">
+                  <img src="gulcan.jpeg"
+                  class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                  <span class="storytext">gulcanyayla</span>
+                  </a><br>
+                  <!--hikayeler bitti-->
+
+                  <!--1.post başladı-->
+                  <div class="card mt-4" style="width: 34rem; position: relative; right: 16px;">
+                    <div>
+                    <a href="https://www.instagram.com/cengizcmataraci" target="_blank" style="text-decoration: none;">
+                    <img src="cengizm.jpeg" class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px; position: relative; left: 16px; top: 12px;">
+                    <span class="storytext"><b style="position: relative; left: 20px; top: 12px;">cengizcmataraci</b></span>
+                    </a>
+                    </div>
+                    <img src="https://blog.biletbayi.com/wp-content/uploads/2019/12/rize.jpg" class="card-img-top mt-4" alt="...">
+                    <div class="card-body">
+                      <div>
+                        <ul
+                        class="list-group list-group-horizontal mt-1"
+                        style="list-style-type: none;"
+                      >
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-heart fa-lg"
+                              style="color: black; position: relative; font-size: 23px"
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-comment fa-lg"
+                              style="
+                                color: black;
+                                position: relative;
+                                font-size: 23px;
+                                margin-left: -11px;
+                              "
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-paper-plane fa-lg"
+                              style="
+                                color: black;
+                                position: relative;
+                                font-size: 23px;
+                                margin-left: -11px;
+                              "
+                            ></i
+                          ></a>
+                        </li>
+                        <span class="">
+                          <li class="nav-item ml-4">
+                            <a class="nav-link ml-2" href="#"
+                              ><i
+                                class="far fa-bookmark fa-lg"
+                                style="color: black; position: relative; font-size: 23px"
+                              ></i
+                            ></a>
+                          </li>
+                        </span>
+                      </ul>
+                      </div>
+
+                    </div>
+                      <div>
+                        <a href="https://www.instagram.com/gulcanyayla" class="mx-3" target="_blank" style="text-decoration: none;">
+                          <img src="gulcan.jpeg"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 20px; height: 20px;">
+                          <span class="posttext"><a href="https://www.instagram.com/gulcanyayla" style="text-decoration: none; color:black; font-weight: bold; position: relative; left: -15px;">gulcanyayla</a> ve <b>42 diğer kişi</b> beğendi</span>
+                          </a>
+                      </div>
+                      <div><p style="position: relative; left: 15px; top: 8px;"><a href="https://www.instagram.com/cengizcmataraci" style="text-decoration: none; color:black; font-weight: bold; position: relative;">cengizcmataraci</a> Burası Rize! Harika bir cennet!</p></div>
+                      <div><p style="color: rgb(184, 184, 184); position: relative; top: -7px; left: 15px;">15 yorumun tümünü gör</p></div>
+                      <div><p style="position: relative; top: -23px; left: 15px;"><a href="https://www.instagram.com/furkantolgayuce" style="text-decoration: none; color:black; font-weight: bold; position: relative;">furkantolgayuce</a> Abi çok güzelmiş yaa! Bir gün götürüsün artık bizi de :)</p></div>
+                      <div><p style="position: relative; top: -37px; left: 15px;"><a href="https://www.instagram.com/elonrmuskk" style="text-decoration: none; color:black; font-weight: bold; position: relative;">elonrmuskk</a> That's wonderful view bro! I alwasys want to travel Rize...</p></div>
+                      <div><p style="color: rgb(184, 184, 184); position: relative; left: 15px; top: -50px;">10 saat önce</p></div>
+                      <div class="card-footer" style="color: rgb(139, 133, 133);
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                          'Helvetica Neue', sans-serif;
+                          font-size: 14px; position: relative; top: -40px;">
+                      <span style="margin-left: -4px">Yorum Ekle...</span>
+                      <span class="mx-100 position-relative start-50" style="color: #0095f6; opacity: 50%"><strong>Paylaş</strong></span>
+                    </div>
+                  </div>
+                  <!--1.post bitti-->
+
+                  <!--2.post başladı-->
+                  <div class="card mt-4" style="width: 34rem; position: relative; right: 16px;">
+                    <div>
+                    <a href="https://www.instagram.com/kodluyoruz" target="_blank" style="text-decoration: none;">
+                    <img src="kodluyoruz.png" class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px; position: relative; left: 16px; top: 12px;">
+                    <span class="storytext"><b style="position: relative; left: 20px; top: 12px;">kodluyoruz</b></span>
+                    </a>
+                    </div>
+                    <img src="https://pbs.twimg.com/media/Erx2B2bXAAEy7gO.jpg" class="card-img-top mt-4" alt="...">
+                    <div class="card-body">
+                      <div>
+                        <ul
+                        class="list-group list-group-horizontal mt-1"
+                        style="list-style-type: none;"
+                      >
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-heart fa-lg"
+                              style="color: black; position: relative; font-size: 23px"
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-comment fa-lg"
+                              style="
+                                color: black;
+                                position: relative;
+                                font-size: 23px;
+                                margin-left: -11px;
+                              "
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-paper-plane fa-lg"
+                              style="
+                                color: black;
+                                position: relative;
+                                font-size: 23px;
+                                margin-left: -11px;
+                              "
+                            ></i
+                          ></a>
+                        </li>
+                        <span class="">
+                          <li class="nav-item ml-4">
+                            <a class="nav-link ml-2" href="#"
+                              ><i
+                                class="far fa-bookmark fa-lg"
+                                style="color: black; position: relative; font-size: 23px"
+                              ></i
+                            ></a>
+                          </li>
+                        </span>
+                      </ul>
+                      </div>
+
+                    </div>
+                      <div>
+                        <a href="https://www.instagram.com/cengizcmataraci" class="mx-3" target="_blank" style="text-decoration: none;">
+                          <img src="cengizm.jpeg"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 20px; height: 20px;">
+                          <span class="posttext"><a href="https://www.instagram.com/cengizcmataraci" style="text-decoration: none; color:black; font-weight: bold; position: relative; left: -15px;">cengizcmataraci</a> ve <b>670 diğer kişi</b> beğendi</span>
+                          </a>
+                      </div>
+                      <div><p style="position: relative; left: 15px; top: 8px;"><a href="https://www.instagram.com/kodluyoruz" style="text-decoration: none; color:black; font-weight: bold; position: relative;">kodluyoruz</a> Barış Balta ile AWS Quick Start Etkinliği #1 30 Ocak Cumartesi günü saat 10.00-15.30'da!</p></div>
+                      <div><p style="color: rgb(184, 184, 184); position: relative; top: -7px; left: 15px;">50 yorumun tümünü gör</p></div>
+                      <div><p style="position: relative; top: -23px; left: 15px;"><a href="https://www.instagram.com/cengizcmataraci" style="text-decoration: none; color:black; font-weight: bold; position: relative;">cengizcmataraci</a> Harika! Kesinlikle katılacağım :)</p></div>
+                      <div><p style="position: relative; top: -37px; left: 15px;"><a href="https://www.instagram.com/kablosuzbeyin" style="text-decoration: none; color:black; font-weight: bold; position: relative;">kablosuzbeyin</a> Topluluk olarak heyecanlıyız!</p></div>
+                      <div><p style="color: rgb(184, 184, 184); position: relative; left: 15px; top: -50px;">10 saat önce</p></div>
+                      <div class="card-footer" style="color: rgb(139, 133, 133);
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                          'Helvetica Neue', sans-serif;
+                          font-size: 14px; position: relative; top: -40px;">
+                      <span style="margin-left: -4px">Yorum Ekle...</span>
+                      <span class="mx-100 position-relative start-50" style="color: #0095f6; opacity: 50%"><strong>Paylaş</strong></span>
+                    </div>
+                  </div>
+                  <!--2.post bitti-->
+
+                  <!--3.post başladı-->
+                  <div class="card mt-4" style="width: 34rem; position: relative; right: 16px;">
+                    <div>
+                    <a href="https://www.instagram.com/elonrmuskk target="_blank" style="text-decoration: none;">
+                    <img src="elon.jpg" class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px; position: relative; left: 16px; top: 12px;">
+                    <span class="storytext"><b style="position: relative; left: 20px; top: 12px;">elonrmuskk</b></span>
+                    </a>
+                    </div>
+                    <img src="roket.jpg" class="card-img-top mt-4" alt="...">
+                    <div class="card-body">
+                      <div>
+                        <ul
+                        class="list-group list-group-horizontal mt-1"
+                        style="list-style-type: none;"
+                      >
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-heart fa-lg"
+                              style="color: black; position: relative; font-size: 23px"
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-comment fa-lg"
+                              style="
+                                color: black;
+                                position: relative;
+                                font-size: 23px;
+                                margin-left: -11px;
+                              "
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"
+                            ><i
+                              class="far fa-paper-plane fa-lg"
+                              style="
+                                color: black;
+                                position: relative;
+                                font-size: 23px;
+                                margin-left: -11px;
+                              "
+                            ></i
+                          ></a>
+                        </li>
+                        <span class="">
+                          <li class="nav-item ml-4">
+                            <a class="nav-link ml-2" href="#"
+                              ><i
+                                class="far fa-bookmark fa-lg"
+                                style="color: black; position: relative; font-size: 23px"
+                              ></i
+                            ></a>
+                          </li>
+                        </span>
+                      </ul>
+                      </div>
+
+                    </div>
+                      <div>
+                        <a href="https://www.instagram.com/cengizcmataraci" class="mx-3" target="_blank" style="text-decoration: none;">
+                          <img src="cengizm.jpeg"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 20px; height: 20px;">
+                          <span class="posttext"><a href="https://www.instagram.com/cengizcmataraci" style="text-decoration: none; color:black; font-weight: bold; position: relative; left: -15px;">cengizcmataraci</a> ve <b>900.182 diğer kişi</b> beğendi</span>
+                          </a>
+                      </div>
+                      <div><p style="position: relative; left: 15px; top: 8px;"><a href="https://www.instagram.com/elonrmuskk" style="text-decoration: none; color:black; font-weight: bold; position: relative;">kodluyoruz</a> That's just beautiful!</p></div>
+                      <div><p style="color: rgb(184, 184, 184); position: relative; top: -7px; left: 15px;">1500 yorumun tümünü gör</p></div>
+                      <div><p style="position: relative; top: -23px; left: 15px;"><a href="https://www.instagram.com/cengizcmataraci" style="text-decoration: none; color:black; font-weight: bold; position: relative;">cengizcmataraci</a> Yeah! Here you go!</p></div>
+                      <div><p style="position: relative; top: -37px; left: 15px;"><a href="https://www.instagram.com/kablosuzbeyin" style="text-decoration: none; color:black; font-weight: bold; position: relative;">kablosuzbeyin</a> When are we moving?</p></div>
+                      <div><p style="color: rgb(184, 184, 184); position: relative; left: 15px; top: -50px;">10 saat önce</p></div>
+                      <div class="card-footer" style="color: rgb(139, 133, 133);
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                          'Helvetica Neue', sans-serif;
+                          font-size: 14px; position: relative; top: -40px;">
+                      <span style="margin-left: -4px">Yorum Ekle...</span>
+                      <span class="mx-100 position-relative start-50" style="color: #0095f6; opacity: 50%"><strong>Paylaş</strong></span>
+                    </div>
+                  </div>
+                  <!--3.post bitti-->
+                </div>
+                  <!--Öneriler kısmı başladı-->
+               <div class="container" style="position: inherit; left: 550px; top: -2295px;">
+                <div class="row">
+                  <div class="col-3">
+                    <div class="card col-xs-12 rightpanel" id="sticky-sidebar" style="width: 26rem; position: inherit; float: left;">
+                      <div>
+                      <a href="https://www.instagram.com/cengizcmataraci" class="mx-2" target="_blank" style="text-decoration: none;">
+                        <img src="cengizm.jpeg"
+                        class="img-fluid mr-3 my-4" style="border-radius: 50%; width: 75px; height: 75px; position: relative; left: 18px;">
+                        <span class="storytext mx-4 fs-6"><b>cengizcmataraci</b></span>
+                        </a> 
+                      </div>
+
+                      <div>
+                      <p class="mx-4 my-1" style="color: rgb(184, 184, 184); font-weight: bolder;">Senin için Öneriler</p><p style="position: relative; left: 172px; top: -28px;"><b>Tümünü gör</b></p>
+                      
+                      <div style="position: relative; left: 25px; top: -30px;" class="my-4">
+                      <a href="https://www.instagram.com/kablosuzbeyin" class="mx-2" target="_blank" style="text-decoration: none;">
+                        <img src="kablosuzbeyin.png"
+                        class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                        <span class="storytext fs-6 mx-2"><b>kablosuzbeyin</b></span></a>
+                      <a href="https://www.instagram.com/kablosuzbeyin" style="color: #0095f6; text-decoration: none; font-weight: bold;">Takip et</a>
+                      </div>
+
+                      <div style="position: relative; left: 25px; top: -30px;" class="my-4">
+                        <a href="https://www.instagram.com/codecraftcom" class="mx-2" target="_blank" style="text-decoration: none;">
+                          <img src="codecraft.png"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                          <span class="storytext fs-6 mx-2"><b>codecraftcom</b></span></a>
+                        <a href="https://www.instagram.com/codecraft" style="color: #0095f6; text-decoration: none; font-weight: bold;">Takip et</a>
+                        </div>
+
+                      <div style="position: relative; left: 25px; top: -30px;" class="my-4">
+                        <a href="https://www.instagram.com/navlungotr" class="mx-2" target="_blank" style="text-decoration: none;">
+                          <img src="navlungo.png"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                          <span class="storytext fs-6 mx-2"><b>navlungotr</b></span></a>
+                        <a href="https://www.instagram.com/navlungotr" style="color: #0095f6; text-decoration: none; font-weight: bold;">Takip et</a>
+                        </div>   
+
+                      <div style="position: relative; left: 25px; top: -30px;" class="my-4">
+                        <a href="https://www.instagram.com/podfreshco" class="mx-2" target="_blank" style="text-decoration: none;">
+                          <img src="pod.jpeg"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                          <span class="storytext fs-6 mx-2"><b>podfreshco</b></span></a>
+                        <a href="https://www.instagram.com/podfreshco" style="color: #0095f6; text-decoration: none; font-weight: bold;">Takip et</a>
+                        </div>
+
+                      <div style="position: relative; left: 25px; top: -30px;" class="my-4">
+                        <a href="https://www.instagram.com/kodluyoruz_junior" class="mx-2" target="_blank" style="text-decoration: none;">
+                          <img src="junior.jpeg"
+                          class="img-fluid mr-3" style="border-radius: 50%; width: 35px; height: 35px;">
+                          <span class="storytext fs-6 mx-2"><b>kodluyoruz_junior</b></span></a>
+                        <a href="https://www.instagram.com/kodluyoruz_junior" style="color: #0095f6; text-decoration: none; font-weight: bold;">Takip et</a>
+                        </div>
+                      </div>  
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                      <!--Öneriler kısmı bitti-->
+                    
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </article>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
